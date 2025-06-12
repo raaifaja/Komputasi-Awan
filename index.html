@@ -1,84 +1,334 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Beranda - Profil Mahasiswa</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
-    body {
-      display: flex;
-      flex-direction: column;
-      background-color: #fff;
-      color: #000;
-    }
-    .navbar {
-      background-color: #d50000;
-    }
-    .navbar-brand, .nav-link, footer {
-      color: white !important;
-    }
-    .hero {
-      background-color: #000;
-      color: white;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    .profile-img {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid #d50000;
-    }
-    .content {
-      flex: 1; /* membuat konten mengisi tinggi sisa */
-    }
-    footer {
-      background-color: #d50000;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Mahasiswa - Raaif</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">Beranda</a>
-    
-    <!-- Tombol toggle untuk layar kecil -->
-    <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
-    <!-- Menu navbar -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-        <li class="nav-item"><a class="nav-link" href="projects.html">Proyek</a></li>
-        <li class="nav-item"><a class="nav-link active" href="contact.html">Kontak</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#" onclick="showPage('home')">
+                <i class="fas fa-user-graduate"></i>
+                <span>Profil Mahasiswa</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-  <div class="content">
-    <section class="hero">
-      <img src="assets/foto 2.jpeg" alt="Foto Profil" class="profile-img mb-3" />
-      <h1>Halo, Saya raaif</h1>
-      <p>Selamat datang di profil web saya. Saya seorang mahasiswa yang sedang belajar web development dan pengembangan perangkat lunak dengan menggunakan Google Colab dan PuTTY.</p>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#" onclick="showPage('home')">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('resume')">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('projects')">Proyek</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('contact')">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <section id="home" class="content-section active">
+        <div class="hero">
+            <div class="container">
+                <div class="profile-container">
+                    <div class="profile-frame"></div>
+                    <img src="assets/foto2.jpeg" alt="Foto Profil" class="profile-img" />
+                </div>
+                <h1>Halo, Saya Raaif</h1>
+                <p class="lead">Mahasiswa Teknologi Informasi di Telkom University</p>
+                <div class="mt-4">
+                    <button class="btn btn-lg btn-primary me-2" onclick="showPage('contact')">
+                        <i class="fas fa-envelope me-2"></i>Hubungi Saya
+                    </button>
+                    <button class="btn btn-lg btn-outline-light" onclick="showPage('projects')">
+                        <i class="fas fa-laptop-code me-2"></i>Lihat Proyek
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="about-content" style="margin-top: -50px; position: relative; z-index: 1;">
+                <h2 class="section-title text-center">Tentang Saya</h2>
+                <p class="lead text-center">
+                    Saya seorang mahasiswa yang sedang belajar web development dan pengembangan perangkat lunak 
+                    dengan menggunakan Google Colab dan PuTTY. Saya memiliki minat dalam berbagai bidang teknologi 
+                    dan selalu bersemangat untuk mempelajari hal-hal baru.
+                </p>
+                
+                <div class="row mt-5">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 text-center p-4">
+                            <div class="card-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h5>Pendidikan</h5>
+                            <p>S1 Teknologi Informasi di Telkom University dengan IPK 3.75</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 text-center p-4">
+                            <div class="card-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h5>Keahlian</h5>
+                            <p>Web Development, Mobile App, UI/UX Design, Network Administration</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 text-center p-4">
+                            <div class="card-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h5>Tools</h5>
+                            <p>VS Code, Figma, Google Colab, PuTTY, Docker, Git</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-5">
+                    <h4 class="mb-3">Keahlian Teknis</h4>
+                    <div class="skills">
+                        <span class="skill-badge">HTML & CSS</span>
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">Bootstrap</span>
+                        <span class="skill-badge">UI/UX Design</span>
+                        <span class="skill-badge">Networking</span>
+                        <span class="skill-badge">Docker</span>
+                        <span class="skill-badge">Git</span>
+                        <span class="skill-badge">Linux</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-  </div>
 
-  <footer>
-    <p>&copy; Mahasiswa Telkom University</p>
-  </footer>
+    <!-- Resume Page -->
+    <section id="resume" class="content-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title center">Resume</h2>
+                <p class="lead">Profil akademik dan profesional saya</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card p-4">
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <h5><i class="fas fa-user me-2 text-primary"></i> Informasi Pribadi</h5>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><strong>Nama:</strong> Sayyieda Raaif Ramdhani</li>
+                                    <li class="mb-2"><strong>Email:</strong> raaif@telkomuniversity.ac.id</li>
+                                    <li class="mb-2"><strong>Telepon:</strong> +62 812 3456 7890</li>
+                                    <li class="mb-2"><strong>Alamat:</strong> Bandung, Jawa Barat</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="col-md-6 mb-4">
+                                <h5><i class="fas fa-book me-2 text-primary"></i> Pendidikan</h5>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <strong>S1 Teknologi Informasi</strong>
+                                        <div>Telkom University</div>
+                                        <div class="text-muted">2020 - Sekarang</div>
+                                    </li>
+                                    <li>
+                                        <strong>SMK Teknik Komputer & Jaringan</strong>
+                                        <div>SMK Telkom Bandung</div>
+                                        <div class="text-muted">2017 - 2020</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <hr class="my-4">
+                        
+                        <h5><i class="fas fa-star me-2 text-primary"></i> Keahlian</h5>
+                        <div class="skills">
+                            <span class="skill-badge">Web Development</span>
+                            <span class="skill-badge">UI/UX Design</span>
+                            <span class="skill-badge">Mobile Development</span>
+                            <span class="skill-badge">Network Administration</span>
+                            <span class="skill-badge">Database Management</span>
+                            <span class="skill-badge">Cloud Computing</span>
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">JavaScript</span>
+                            <span class="skill-badge">Docker</span>
+                            <span class="skill-badge">Git</span>
+                        </div>
+                        
+                        <hr class="my-4">
+                        
+                        <h5><i class="fas fa-tools me-2 text-primary"></i> Tools</h5>
+                        <div class="skills">
+                            <span class="skill-badge">VS Code</span>
+                            <span class="skill-badge">Figma</span>
+                            <span class="skill-badge">Google Colab</span>
+                            <span class="skill-badge">PuTTY</span>
+                            <span class="skill-badge">Docker</span>
+                            <span class="skill-badge">GitHub</span>
+                            <span class="skill-badge">Postman</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    <!-- Projects Page -->
+    <section id="projects" class="content-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title center">Proyek Saya</h2>
+                <p class="lead">Beberapa karya yang telah saya buat</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card h-100">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="Proyek EA">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Enterprise Architecture</span>
+                            <h5 class="card-title">Perancangan EA Perusahaan Operator Kereta Api</h5>
+                            <p class="card-text">Merancang arsitektur enterprise untuk perusahaan operator kereta api dengan pendekatan TOGAF.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <a href="#" class="btn btn-sm btn-outline-primary">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card h-100">
+                        <img src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="Proyek Mobile">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Mobile App</span>
+                            <h5 class="card-title">Mobile App Sertifikasi Profesional</h5>
+                            <p class="card-text">Aplikasi mobile untuk persiapan dan pelaksanaan ujian sertifikasi profesional di berbagai bidang.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <a href="#" class="btn btn-sm btn-outline-primary">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card h-100">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80" class="card-img-top" alt="Proyek Web">
+                        <div class="card-body">
+                            <span class="badge bg-info mb-2">Web App</span>
+                            <h5 class="card-title">Website Sertifikasi Profesional</h5>
+                            <p class="card-text">Platform web untuk pengelolaan sertifikasi profesional dengan fitur ujian online dan sertifikat digital.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <a href="#" class="btn btn-sm btn-outline-primary">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Page -->
+    <section id="contact" class="content-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title center">Kontak Saya</h2>
+                <p class="lead">Silakan hubungi saya melalui form berikut</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card p-4">
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <h5>Informasi Kontak</h5>
+                                <ul class="list-unstyled">
+                                    <li class="mb-3">
+                                        <i class="fas fa-map-marker-alt me-2 text-primary"></i>
+                                        <strong>Alamat:</strong> Jl. Telekomunikasi No.1, Bandung
+                                    </li>
+                                    <li class="mb-3">
+                                        <i class="fas fa-phone me-2 text-primary"></i>
+                                        <strong>Telepon:</strong> +62 812 3456 7890
+                                    </li>
+                                    <li class="mb-3">
+                                        <i class="fas fa-envelope me-2 text-primary"></i>
+                                        <strong>Email:</strong> raaif@telkomuniversity.ac.id
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-clock me-2 text-primary"></i>
+                                        <strong>Jam Kerja:</strong> Senin-Jumat, 09:00 - 17:00
+                                    </li>
+                                </ul>
+                                
+                                <div class="mt-4">
+                                    <h5>Ikuti Saya</h5>
+                                    <div class="social-links">
+                                        <a href="https://www.linkedin.com/in/sayyiedaraaif/"><i class="fab fa-linkedin-in"></i></a>
+                                        <a href="https://github.com/raaifaja"><i class="fab fa-github"></i></a>
+                                        <a href="https://www.instagram.com/raaifaja/"><i class="fab fa-instagram"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <form class="contact-form">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Nama</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Nama Anda">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="email@example.com">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label">Pesan</label>
+                                        <textarea class="form-control" id="message" rows="4" placeholder="Tulis pesan Anda..."></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100">
+                                        <i class="fas fa-paper-plane me-2"></i>Kirim Pesan
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2023 Mahasiswa Telkom University. Hak Cipta Dilindungi.</p>
+            <p class="mb-0">Dibuat dengan <i class="fas fa-heart text-danger"></i> oleh Raaif</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body></html>
